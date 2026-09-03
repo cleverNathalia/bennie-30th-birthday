@@ -1,0 +1,84 @@
+.door-card {
+  position: relative;
+  border-radius: 16px;
+  padding: 2rem;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 30px var(--shadow);
+  overflow: hidden;
+}
+
+.door-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.door-number {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.door-card.locked .door-number {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.door-date {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.door-card.locked .door-date {
+  color: white;
+}
+
+.door-emoji,
+.door-lock {
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  display: inline-block;
+}
+
+.countdown {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .door-card {
+    min-height: 240px;
+    padding: 1.5rem;
+  }
+
+  .door-date {
+    font-size: 1.1rem;
+  }
+
+  .door-emoji,
+  .door-lock {
+    font-size: 2rem;
+  }
+}

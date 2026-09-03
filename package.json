@@ -1,0 +1,27 @@
+{
+  "name": "bennie-30th-birthday",
+  "version": "1.0.0",
+  "description": "A special countdown page with eight doors, one unlocking each day until Bennie's 30th birthday.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "framer-motion": "^10.16.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^4.3.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cleverNathalia/bennie-30th-birthday.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
