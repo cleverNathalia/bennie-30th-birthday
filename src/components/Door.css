@@ -226,14 +226,26 @@
 }
 
 .countdown {
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 600;
   letter-spacing: 0.5px;
-  color: var(--neon-cyan);
-  text-shadow: 0 0 8px var(--neon-cyan);
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px var(--neon-pink);
   text-align: center;
   font-family: 'Courier New', monospace;
-  margin-top: 8px;
+  margin-top: 12px;
+  animation: countdownPulse 1s ease-in-out infinite;
+}
+
+@keyframes countdownPulse {
+  0%, 100% {
+    text-shadow: 0 0 8px var(--neon-pink);
+    opacity: 0.9;
+  }
+  50% {
+    text-shadow: 0 0 15px var(--neon-pink);
+    opacity: 1;
+  }
 }
 
 /* Responsive */
