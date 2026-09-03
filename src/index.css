@@ -5,20 +5,23 @@
 }
 
 :root {
-  --primary: #FFB347;
-  --secondary: #FFD580;
-  --accent: #FF6B9D;
-  --warm-bg: #FFF9F3;
-  --text-dark: #2C2C2C;
-  --text-light: #555555;
-  --shadow: rgba(255, 107, 157, 0.15);
+  --primary: #00F0FF;
+  --secondary: #FF00FF;
+  --accent: #FF1493;
+  --warm-bg: #0A0E27;
+  --text-dark: #00F0FF;
+  --text-light: #00F0FF;
+  --neon-pink: #FF1493;
+  --neon-cyan: #00F0FF;
+  --shadow: rgba(0, 240, 255, 0.3);
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, var(--warm-bg) 0%, #FFF5E6 100%);
+  font-family: 'Courier New', monospace;
+  background: #0A0E27;
   color: var(--text-dark);
   min-height: 100vh;
+  position: relative;
 }
 
 html, body, #root {

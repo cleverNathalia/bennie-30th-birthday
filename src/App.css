@@ -1,7 +1,7 @@
 .app {
   min-height: 100vh;
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, var(--warm-bg) 0%, #FFF5E6 100%);
+  background: #0A0E27;
   position: relative;
   overflow-x: hidden;
 }
@@ -13,9 +13,32 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background:
-    radial-gradient(circle at 20% 50%, rgba(255, 107, 157, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(255, 179, 71, 0.1) 0%, transparent 50%);
+  background-image:
+    linear-gradient(0deg, transparent 24%, rgba(0, 240, 255, 0.05) 25%, rgba(0, 240, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 240, 255, 0.05) 75%, rgba(0, 240, 255, 0.05) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, rgba(0, 240, 255, 0.05) 25%, rgba(0, 240, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 240, 255, 0.05) 75%, rgba(0, 240, 255, 0.05) 76%, transparent 77%, transparent);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+  animation: scan 8s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 50px;
+  }
+}
+
+.app::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.1) 0%, rgba(255, 20, 147, 0.05) 50%, transparent 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -44,16 +67,22 @@
 .header h1 {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--neon-cyan);
+  text-shadow:
+    0 0 10px var(--neon-cyan),
+    0 0 20px var(--neon-pink),
+    0 0 30px var(--neon-cyan);
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 .header .subtitle {
   font-size: 1.1rem;
-  color: var(--text-light);
+  color: var(--neon-pink);
   font-weight: 300;
+  text-shadow: 0 0 10px var(--neon-pink);
+  letter-spacing: 2px;
 }
 
 .doors-grid {
