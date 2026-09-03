@@ -1,5 +1,6 @@
 const DUBLIN_TZ = 'Europe/Dublin';
 const UNLOCK_HOUR = 18; // 6 PM Dublin time
+const TEST_MODE = new URLSearchParams(window.location.search).get('test') === 'true';
 
 let contentData = null;
 let currentModalDoor = null;
@@ -20,6 +21,8 @@ async function loadContent() {
 
 // Check if a door should be unlocked based on Dublin time
 function isDoorUnlocked(doorIndex) {
+    if (TEST_MODE) return true;
+
     const dublinTime = new Date().toLocaleString('en-US', { timeZone: DUBLIN_TZ });
     const now = new Date(dublinTime);
 
