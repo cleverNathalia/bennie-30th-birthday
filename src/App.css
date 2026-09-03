@@ -86,11 +86,21 @@
 }
 
 .doors-grid {
-  max-width: 1000px;
+  max-width: 500px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 2rem;
+  justify-items: center;
+  padding: 0 1rem;
+}
+
+@media (max-width: 500px) {
+  .doors-grid {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 2rem 0;
+  }
 }
 
 @media (max-width: 768px) {

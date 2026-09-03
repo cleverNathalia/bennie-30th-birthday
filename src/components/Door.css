@@ -1,206 +1,273 @@
-.door-card {
+.door-wrapper {
   position: relative;
-  border-radius: 12px;
-  padding: 2rem;
-  min-height: 320px;
+  width: 210px;
+  height: 270px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  background:
-    linear-gradient(180deg, rgba(0, 20, 40, 0.8) 0%, rgba(0, 10, 30, 0.9) 100%),
-    repeating-linear-gradient(
-      0deg,
-      rgba(0, 240, 255, 0.03) 0px,
-      rgba(0, 240, 255, 0.03) 1px,
-      transparent 1px,
-      transparent 2px
-    );
-  box-shadow:
-    0 0 40px rgba(0, 240, 255, 0.6),
-    inset 0 0 40px rgba(0, 240, 255, 0.2),
-    0 15px 40px rgba(0, 0, 0, 0.8);
-  overflow: hidden;
-  border: 4px solid rgba(0, 240, 255, 0.7);
-  transition: all 0.3s ease;
-  clip-path: polygon(0 0, 100% 0, 100% 88%, 95% 95%, 5% 95%, 0 88%);
+  justify-content: flex-start;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  outline: none;
+  transform-origin: center;
 }
 
-.door-card.locked {
-  background:
-    linear-gradient(180deg, rgba(60, 20, 40, 0.8) 0%, rgba(40, 10, 30, 0.9) 100%),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 20, 147, 0.03) 0px,
-      rgba(255, 20, 147, 0.03) 1px,
-      transparent 1px,
-      transparent 2px
-    );
-  border: 4px solid rgba(255, 20, 147, 0.7);
-  box-shadow:
-    0 0 40px rgba(255, 20, 147, 0.6),
-    inset 0 0 40px rgba(255, 20, 147, 0.2),
-    0 15px 40px rgba(0, 0, 0, 0.8);
+.door-wrapper[tabindex="0"]:focus-visible {
+  outline: 3px solid rgba(0, 240, 255, 0.8);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
-.door-card.unlocked {
-  border: 4px solid rgba(0, 240, 255, 1);
-  box-shadow:
-    0 0 60px rgba(0, 240, 255, 0.8),
-    inset 0 0 50px rgba(0, 240, 255, 0.3),
-    0 15px 40px rgba(0, 0, 0, 0.8);
+.door-wrapper.locked {
+  cursor: not-allowed;
 }
 
-.door-card.unlocked:hover {
-  box-shadow:
-    0 0 80px rgba(0, 240, 255, 1),
-    inset 0 0 60px rgba(0, 240, 255, 0.4),
-    0 15px 40px rgba(0, 0, 0, 0.8);
-  border: 4px solid rgba(0, 240, 255, 1);
-  transform: scale(1.02);
+.door-wrapper.unlocked:active {
+  transform: scale(0.98);
 }
 
+/* Prevent motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .door-wrapper {
+    transition: none;
+  }
+}
+
+/* Panel SVG styling */
+.panel-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.3));
+}
+
+.panel-path {
+  transition: stroke 0.3s ease, filter 0.3s ease;
+}
+
+.panel-path.unlocked {
+  stroke: #00f0ff;
+  filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.5));
+}
+
+.panel-path.unlocked:hover {
+  stroke: #00f0ff;
+  filter: drop-shadow(0 0 30px rgba(0, 240, 255, 0.8));
+}
+
+.panel-path.locked {
+  stroke: #ff1493;
+  filter: drop-shadow(0 0 15px rgba(255, 20, 147, 0.4));
+  opacity: 0.7;
+}
+
+.grid-texture {
+  pointer-events: none;
+}
+
+.bottom-details {
+  transition: opacity 0.3s ease;
+}
+
+.door-wrapper.unlocked:hover .bottom-details {
+  opacity: 1 !important;
+}
+
+/* Content container */
 .door-content {
   position: relative;
   z-index: 2;
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 
-.door-number {
+/* Level badge */
+.level-badge-container {
   position: absolute;
-  top: -30px;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.3) 0%, rgba(0, 240, 255, 0.1) 100%);
-  border: 3px solid var(--neon-cyan);
+  top: -20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.level-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px var(--neon-cyan);
+  text-transform: uppercase;
+  font-family: 'Courier New', monospace;
+  margin-right: 8px;
+}
+
+.door-wrapper.locked .level-label {
+  color: var(--neon-pink);
+  text-shadow: 0 0 8px var(--neon-pink);
+  opacity: 0.8;
+}
+
+.level-badge {
+  width: 76px;
+  height: 76px;
+  filter: drop-shadow(0 0 15px rgba(0, 240, 255, 0.4));
+}
+
+.door-wrapper.locked .level-badge {
+  filter: drop-shadow(0 0 10px rgba(255, 20, 147, 0.3));
+}
+
+.level-number {
+  position: absolute;
+  top: -14px;
+  right: 20px;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-family: 'Courier New', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.level-number.unlocked {
+  color: white;
+  text-shadow:
+    0 0 10px rgba(255, 20, 147, 0.6),
+    0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.level-number.locked {
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 0 8px rgba(255, 20, 147, 0.4);
+}
+
+/* Center content */
+.center-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Play state */
+.play-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
-  color: var(--neon-cyan);
-  font-weight: 700;
-  text-transform: uppercase;
+}
+
+.play-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 10px rgba(255, 20, 147, 0.4));
+}
+
+.door-wrapper.unlocked:hover .play-ring {
+  filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.8));
+}
+
+.play-triangle {
+  position: relative;
+  z-index: 4;
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 0 0 15px rgba(255, 20, 147, 0.6);
+  line-height: 1;
+  margin-left: 4px;
+  transition: text-shadow 0.3s ease;
+}
+
+.door-wrapper.unlocked:hover .play-triangle {
+  text-shadow: 0 0 25px rgba(255, 20, 147, 1);
+}
+
+.play-label {
+  font-size: 0.8rem;
+  font-weight: 300;
   letter-spacing: 1px;
-  text-shadow: 0 0 15px var(--neon-cyan);
-  box-shadow: 0 0 30px var(--neon-cyan), inset 0 0 20px rgba(0, 240, 255, 0.2);
-  z-index: 10;
-}
-
-.door-card.locked .door-number {
-  border-color: var(--neon-pink);
-  color: var(--neon-pink);
-  text-shadow: 0 0 15px var(--neon-pink);
-  box-shadow: 0 0 30px var(--neon-pink), inset 0 0 20px rgba(255, 20, 147, 0.2);
-  background: radial-gradient(circle, rgba(255, 20, 147, 0.3) 0%, rgba(255, 20, 147, 0.1) 100%);
-}
-
-.door-date {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--neon-cyan);
-  margin-bottom: 1.5rem;
+  color: white;
   text-shadow: 0 0 10px var(--neon-cyan);
-  letter-spacing: 1px;
+  text-transform: lowercase;
+  font-family: 'Courier New', monospace;
+  margin-top: 4px;
 }
 
-.door-card.locked .door-date {
-  color: var(--neon-pink);
-  text-shadow: 0 0 10px var(--neon-pink);
+/* Locked state */
+.lock-icon {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 20px rgba(255, 20, 147, 0.6));
+  animation: lockPulse 2s ease-in-out infinite;
 }
 
-.door-emoji {
-  font-size: 4rem;
-  margin: 1rem 0;
-  display: inline-block;
-  filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.6));
-}
-
-.door-lock {
-  font-size: 3.5rem;
-  margin: 1rem 0;
-  display: inline-block;
-  filter: drop-shadow(0 0 15px rgba(255, 20, 147, 0.5));
+@keyframes lockPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 15px rgba(255, 20, 147, 0.4));
+    opacity: 0.8;
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(255, 20, 147, 0.8));
+    opacity: 1;
+  }
 }
 
 .countdown {
-  font-size: 0.95rem;
-  color: var(--neon-pink);
+  font-size: 0.75rem;
   font-weight: 500;
-  margin-top: 1rem;
-  text-shadow: 0 0 10px var(--neon-pink);
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px var(--neon-cyan);
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  margin-top: 8px;
 }
 
-.shimmer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.3), transparent);
-  pointer-events: none;
-  z-index: 1;
-  animation: shimmerGlow 3s infinite;
-}
-
-@keyframes shimmerGlow {
-  0%, 100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-@keyframes glitch {
-  0%, 100% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    transform: translate(2px, 2px);
-  }
-  80% {
-    transform: translate(2px, -2px);
-  }
-}
-
-.door-emoji {
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% {
-    text-shadow: 0 0 10px var(--neon-cyan);
-  }
-  50% {
-    text-shadow: 0 0 30px var(--neon-cyan), 0 0 40px var(--neon-pink);
-  }
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-  .door-card {
-    min-height: 240px;
-    padding: 1.5rem;
+  .door-wrapper {
+    width: 180px;
+    height: 240px;
   }
 
-  .door-date {
+  .level-badge {
+    width: 60px;
+    height: 60px;
+  }
+
+  .level-number {
     font-size: 1.1rem;
+    top: -10px;
+    right: 16px;
   }
 
-  .door-emoji,
-  .door-lock {
+  .level-label {
+    font-size: 0.55rem;
+  }
+
+  .play-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .play-triangle {
     font-size: 2rem;
+  }
+
+  .lock-icon {
+    font-size: 2.5rem;
   }
 }
