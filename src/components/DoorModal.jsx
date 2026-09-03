@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Gallery from './Gallery'
+import VideoLoader from './VideoLoader'
 import './DoorModal.css'
 
 function DoorModal({ door, doorIndex, onClose }) {
+  const [videoLoaded, setVideoLoaded] = useState(false)
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') onClose()
@@ -13,20 +15,40 @@ function DoorModal({ door, doorIndex, onClose }) {
   }, [onClose])
 
   const backdropVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-    exit: { opacity: 0 },
+    hidden: { opacity: 0, backdropFilter: 'blur(0px)' },
+    visible: {
+      opacity: 1,
+      backdropFilter: 'blur(8px)',
+      transition: { duration: 0.3 },
+    },
+    exit: { opacity: 0, backdropFilter: 'blur(0px)' },
   }
 
   const contentVariants = {
-    hidden: { opacity: 0, scale: 0.8, y: 50 },
+    hidden: {
+      opacity: 0,
+      scale: 0.5,
+      y: 100,
+      rotateY: -90,
+    },
     visible: {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { type: 'spring', stiffness: 300, damping: 30 },
+      rotateY: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 200,
+        damping: 25,
+        duration: 0.6,
+      },
     },
-    exit: { opacity: 0, scale: 0.8, y: 50 },
+    exit: {
+      opacity: 0,
+      scale: 0.5,
+      y: 100,
+      rotateY: 90,
+    },
   }
 
   return (
@@ -77,7 +99,13 @@ function DoorModal({ door, doorIndex, onClose }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            <iframe src={door.videoLink} allowFullScreen></iframe>
+            {!videoLoaded && <VideoLoader />}
+            <iframe
+              src={door.videoLink}
+              allowFullScreen
+              onLoad={() => setVideoLoaded(true)}
+              style={{ opacity: videoLoaded ? 1 : 0.3 }}
+            ></iframe>
           </motion.div>
         )}
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Door from './components/Door'
 import DoorModal from './components/DoorModal'
+import ParticleBackground from './components/ParticleBackground'
 import './App.css'
 
 const DUBLIN_TZ = 'Europe/Dublin'
@@ -63,6 +64,7 @@ function App() {
 
   return (
     <div className="app">
+      <ParticleBackground />
       <motion.div
         className="header"
         initial={{ opacity: 0, y: -20 }}
