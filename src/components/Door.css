@@ -1,75 +1,131 @@
 .door-card {
   position: relative;
-  border-radius: 0;
+  border-radius: 12px;
   padding: 2rem;
-  min-height: 280px;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.05) 0%, rgba(255, 20, 147, 0.05) 100%);
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), inset 0 0 20px rgba(0, 240, 255, 0.1);
+  background:
+    linear-gradient(180deg, rgba(0, 20, 40, 0.8) 0%, rgba(0, 10, 30, 0.9) 100%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 240, 255, 0.03) 0px,
+      rgba(0, 240, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  box-shadow:
+    0 0 40px rgba(0, 240, 255, 0.6),
+    inset 0 0 40px rgba(0, 240, 255, 0.2),
+    0 15px 40px rgba(0, 0, 0, 0.8);
   overflow: hidden;
-  border: 2px solid rgba(0, 240, 255, 0.5);
+  border: 4px solid rgba(0, 240, 255, 0.7);
   transition: all 0.3s ease;
+  clip-path: polygon(0 0, 100% 0, 100% 88%, 95% 95%, 5% 95%, 0 88%);
 }
 
 .door-card.locked {
-  background: linear-gradient(135deg, rgba(255, 20, 147, 0.05) 0%, rgba(0, 240, 255, 0.05) 100%);
-  border: 2px solid rgba(255, 20, 147, 0.5);
-  box-shadow: 0 0 20px rgba(255, 20, 147, 0.4), inset 0 0 20px rgba(255, 20, 147, 0.1);
+  background:
+    linear-gradient(180deg, rgba(60, 20, 40, 0.8) 0%, rgba(40, 10, 30, 0.9) 100%),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 20, 147, 0.03) 0px,
+      rgba(255, 20, 147, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  border: 4px solid rgba(255, 20, 147, 0.7);
+  box-shadow:
+    0 0 40px rgba(255, 20, 147, 0.6),
+    inset 0 0 40px rgba(255, 20, 147, 0.2),
+    0 15px 40px rgba(0, 0, 0, 0.8);
 }
 
 .door-card.unlocked {
-  border: 2px solid rgba(0, 240, 255, 0.8);
-  box-shadow: 0 0 30px rgba(0, 240, 255, 0.6), inset 0 0 20px rgba(0, 240, 255, 0.2);
+  border: 4px solid rgba(0, 240, 255, 1);
+  box-shadow:
+    0 0 60px rgba(0, 240, 255, 0.8),
+    inset 0 0 50px rgba(0, 240, 255, 0.3),
+    0 15px 40px rgba(0, 0, 0, 0.8);
 }
 
 .door-card.unlocked:hover {
-  box-shadow: 0 0 50px rgba(0, 240, 255, 0.8), inset 0 0 30px rgba(0, 240, 255, 0.3);
-  border: 2px solid rgba(0, 240, 255, 1);
+  box-shadow:
+    0 0 80px rgba(0, 240, 255, 1),
+    inset 0 0 60px rgba(0, 240, 255, 0.4),
+    0 15px 40px rgba(0, 0, 0, 0.8);
+  border: 4px solid rgba(0, 240, 255, 1);
+  transform: scale(1.02);
 }
 
 .door-content {
   position: relative;
   z-index: 2;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .door-number {
-  font-size: 0.9rem;
+  position: absolute;
+  top: -30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.3) 0%, rgba(0, 240, 255, 0.1) 100%);
+  border: 3px solid var(--neon-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
   color: var(--neon-cyan);
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px var(--neon-cyan);
+  letter-spacing: 1px;
+  text-shadow: 0 0 15px var(--neon-cyan);
+  box-shadow: 0 0 30px var(--neon-cyan), inset 0 0 20px rgba(0, 240, 255, 0.2);
+  z-index: 10;
 }
 
 .door-card.locked .door-number {
+  border-color: var(--neon-pink);
   color: var(--neon-pink);
-  text-shadow: 0 0 10px var(--neon-pink);
+  text-shadow: 0 0 15px var(--neon-pink);
+  box-shadow: 0 0 30px var(--neon-pink), inset 0 0 20px rgba(255, 20, 147, 0.2);
+  background: radial-gradient(circle, rgba(255, 20, 147, 0.3) 0%, rgba(255, 20, 147, 0.1) 100%);
 }
 
 .door-date {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 600;
   color: var(--neon-cyan);
-  margin-bottom: 1rem;
-  text-shadow: 0 0 15px var(--neon-cyan);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px var(--neon-cyan);
+  letter-spacing: 1px;
 }
 
 .door-card.locked .door-date {
   color: var(--neon-pink);
-  text-shadow: 0 0 15px var(--neon-pink);
+  text-shadow: 0 0 10px var(--neon-pink);
 }
 
-.door-emoji,
-.door-lock {
-  font-size: 2.5rem;
+.door-emoji {
+  font-size: 4rem;
   margin: 1rem 0;
   display: inline-block;
+  filter: drop-shadow(0 0 20px rgba(0, 240, 255, 0.6));
+}
+
+.door-lock {
+  font-size: 3.5rem;
+  margin: 1rem 0;
+  display: inline-block;
+  filter: drop-shadow(0 0 15px rgba(255, 20, 147, 0.5));
 }
 
 .countdown {
