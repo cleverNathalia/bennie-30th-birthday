@@ -1,0 +1,81 @@
+{
+  "doors": [
+    {
+      "day": 1,
+      "date": "2026-09-03",
+      "title": "Day One",
+      "text": "Something special is coming every day until Thursday. Check back daily at 18:00 (Dublin time) 💌",
+      "type": "video",
+      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview"
+    },
+    {
+      "day": 2,
+      "date": "2026-09-04",
+      "title": "Day Two",
+      "text": "[Your message for day two]",
+      "type": "video",
+      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview"
+    },
+    {
+      "day": 3,
+      "date": "2026-09-05",
+      "title": "Day Three",
+      "text": "Thirty true things...",
+      "type": "text",
+      "items": [
+        "[Add one-liner for year 1]",
+        "[Add one-liner for year 2]",
+        "[Add one-liner for year 3]"
+      ]
+    },
+    {
+      "day": 4,
+      "date": "2026-09-06",
+      "title": "Day Four",
+      "text": "Our song.",
+      "type": "video",
+      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview"
+    },
+    {
+      "day": 5,
+      "date": "2026-09-07",
+      "title": "Day Five",
+      "text": "[Your message from the plane]",
+      "type": "video",
+      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview"
+    },
+    {
+      "day": 6,
+      "date": "2026-09-08",
+      "title": "Day Six",
+      "text": "Thirteen years in photos.",
+      "type": "gallery",
+      "photos": [
+        {
+          "url": "https://drive.google.com/uc?export=view&id=PLACEHOLDER",
+          "caption": "[Photo 1 caption]"
+        },
+        {
+          "url": "https://drive.google.com/uc?export=view&id=PLACEHOLDER",
+          "caption": "[Photo 2 caption]"
+        }
+      ]
+    },
+    {
+      "day": 7,
+      "date": "2026-09-09",
+      "title": "Day Seven",
+      "text": "[Your final message before the birthday]",
+      "type": "video",
+      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview"
+    },
+    {
+      "day": 8,
+      "date": "2026-09-10",
+      "title": "Happy 30th",
+      "text": "[Your birthday message]",
+      "type": "video",
+      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview"
+    }
+  ]
+}
