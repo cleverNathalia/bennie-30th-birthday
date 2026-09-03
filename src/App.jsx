@@ -3,13 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion'
 import Door from './components/Door'
 import DoorModal from './components/DoorModal'
 import ParticleBackground from './components/ParticleBackground'
+import DesignSystem from './pages/DesignSystem'
 import './App.css'
 
 const DUBLIN_TZ = 'Europe/Dublin'
 const UNLOCK_HOUR = 18
 const TEST_MODE = new URLSearchParams(window.location.search).get('test') === 'true'
+const DESIGN_SYSTEM_MODE = new URLSearchParams(window.location.search).get('design-system') === 'true'
 
 function App() {
+  if (DESIGN_SYSTEM_MODE) {
+    return <DesignSystem />
+  }
   const [contentData, setContentData] = useState(null)
   const [selectedDoor, setSelectedDoor] = useState(null)
   const [unlockedDoors, setUnlockedDoors] = useState({})
