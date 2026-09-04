@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(4, 5, 10, 0.7);
   backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
@@ -15,85 +15,85 @@
 }
 
 .modal-content {
-  background: linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(20, 24, 50, 0.95) 100%);
+  background: linear-gradient(180deg, #2A3548, #1A2130);
   border-radius: 0;
   padding: 2rem;
-  max-width: 600px;
+  max-width: 700px;
   width: 100%;
   max-height: 80vh;
   overflow-y: auto;
   position: relative;
   pointer-events: auto;
   box-shadow:
-    0 0 50px rgba(0, 240, 255, 0.5),
-    inset 0 0 30px rgba(0, 240, 255, 0.1),
-    0 0 100px rgba(255, 20, 147, 0.3);
-  border: 2px solid rgba(0, 240, 255, 0.6);
-  backdrop-filter: blur(10px);
+    inset 0 1px 0 rgba(255, 255, 255, 0.09),
+    0 14px 34px rgba(0, 0, 0, 0.35),
+    0 0 32px rgba(0, 240, 255, 0.22);
+  border: 1px solid rgba(0, 240, 255, 0.18);
+  font-family: 'IBM Plex Mono', monospace;
+  color: #CFE9EF;
 }
 
 .modal-content::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 .modal-content::-webkit-scrollbar-track {
-  background: rgba(0, 240, 255, 0.1);
-  border-radius: 10px;
+  background: rgba(0, 240, 255, 0.05);
 }
 
 .modal-content::-webkit-scrollbar-thumb {
-  background: var(--neon-cyan);
-  border-radius: 10px;
-  box-shadow: 0 0 10px var(--neon-cyan);
+  background: rgba(0, 240, 255, 0.35);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.45);
 }
 
 .close-btn {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1.5rem;
+  right: 1.5rem;
   background: transparent;
-  border: 2px solid var(--neon-pink);
+  border: 1px solid #FF2E88;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--neon-pink);
-  transition: all 0.2s;
+  color: #FF2E88;
+  transition: all 0.28s cubic-bezier(0.2, 0.9, 0.25, 1);
   padding: 0.5rem 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 10px var(--neon-pink);
+  box-shadow: 0 0 14px rgba(255, 46, 136, 0.35);
 }
 
 .close-btn:hover {
-  color: var(--neon-cyan);
-  border-color: var(--neon-cyan);
-  box-shadow: 0 0 20px var(--neon-cyan);
+  color: #00F0FF;
+  border-color: #00F0FF;
+  box-shadow: 0 0 22px rgba(0, 240, 255, 0.4);
 }
 
 .door-number {
-  font-size: 0.9rem;
-  color: var(--neon-cyan);
-  font-weight: 600;
+  font-size: 9px;
+  color: rgba(207, 233, 239, 0.5);
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px var(--neon-cyan);
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
 }
 
 .modal-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--neon-cyan);
+  font-size: 13px;
+  line-height: 1.7;
+  color: #CFE9EF;
   margin: 1.5rem 0;
   white-space: pre-wrap;
   word-break: break-word;
-  text-shadow: 0 0 5px var(--neon-cyan);
 }
 
 .modal-video {
   margin: 1.5rem 0;
-  border: 2px solid rgba(0, 240, 255, 0.4);
-  padding: 1rem;
-  box-shadow: inset 0 0 20px rgba(0, 240, 255, 0.2);
+  border: 1px solid rgba(0, 240, 255, 0.18);
+  padding: 0;
+  box-shadow: inset 0 0 46px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(0, 240, 255, 0.14);
+  background: #03060C;
+  overflow: hidden;
 }
 
 .modal-video iframe {
@@ -101,6 +101,7 @@
   aspect-ratio: 16 / 9;
   border-radius: 0;
   border: none;
+  display: block;
 }
 
 .modal-items-list {
@@ -109,17 +110,15 @@
 }
 
 .modal-items-list p {
-  margin-bottom: 0.75rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--neon-cyan);
-  text-shadow: 0 0 5px rgba(0, 240, 255, 0.5);
+  margin-bottom: 1rem;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #CFE9EF;
 }
 
 .modal-items-list strong {
-  color: var(--neon-pink);
-  font-weight: 600;
-  text-shadow: 0 0 10px var(--neon-pink);
+  color: #00F0FF;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {

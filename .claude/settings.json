@@ -16,7 +16,15 @@
       "Bash(git commit -m 'Remove CRT scanlines completely *)",
       "Bash(git commit -m 'Add CRT scanlines only to marquee title *)",
       "Bash(git commit -m 'Brighten cartridge slot images for better clarity *)",
-      "Bash(git commit -m 'Change unlock time to 10:00 AM Cape Town time *)"
+      "Bash(git commit -m 'Change unlock time to 10:00 AM Cape Town time *)",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "Bash(gh pr *)",
+      "Bash(gh repo *)",
+      "Bash(git checkout *)",
+      "Bash(git merge *)",
+      "Bash(git stash *)",
+      "Bash(git commit -m 'Style modal to match arcade cabinet theme *)"
     ]
   }
 }
