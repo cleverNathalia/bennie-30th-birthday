@@ -6,7 +6,8 @@
       "title": "Day One",
       "text": "Something special is coming every day until Thursday. Check back daily at 18:00 (Dublin time) 💌",
       "type": "video",
-      "videoLink": "https://drive.google.com/file/d/1KUqt06dL0P14KEzJU5g-DZgo0vX4aFy4/preview"
+      "videoLink": "https://drive.google.com/file/d/1KUqt06dL0P14KEzJU5g-DZgo0vX4aFy4/preview",
+      "still": "/images/bennie-day1.jpg"
     },
     {
       "day": 2,
@@ -14,7 +15,8 @@
       "title": "Day Two",
       "text": "[Your message for day two]",
       "type": "video",
-      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview"
+      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview",
+      "still": "/images/bennie-day2.jpg"
     },
     {
       "day": 3,
@@ -26,7 +28,8 @@
         "[Add one-liner for year 1]",
         "[Add one-liner for year 2]",
         "[Add one-liner for year 3]"
-      ]
+      ],
+      "still": "/images/bennie-day3.jpg"
     },
     {
       "day": 4,
@@ -34,7 +37,8 @@
       "title": "Day Four",
       "text": "Our song.",
       "type": "video",
-      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview"
+      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview",
+      "still": "/images/bennie-day4.jpg"
     },
     {
       "day": 5,
@@ -42,7 +46,8 @@
       "title": "Day Five",
       "text": "[Your message from the plane]",
       "type": "video",
-      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview"
+      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview",
+      "still": "/images/bennie-day5.jpg"
     },
     {
       "day": 6,
@@ -59,7 +64,8 @@
           "url": "https://drive.google.com/uc?export=view&id=PLACEHOLDER",
           "caption": "[Photo 2 caption]"
         }
-      ]
+      ],
+      "still": "/images/bennie-day6.jpg"
     },
     {
       "day": 7,
@@ -67,7 +73,8 @@
       "title": "Day Seven",
       "text": "[Your final message before the birthday]",
       "type": "video",
-      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview"
+      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview",
+      "still": "/images/bennie-day7.jpg"
     },
     {
       "day": 8,
@@ -75,7 +82,8 @@
       "title": "Happy 30th",
       "text": "[Your birthday message]",
       "type": "video",
-      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview"
+      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview",
+      "still": "/images/bennie-day8.jpg"
     }
   ]
 }
