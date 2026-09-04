@@ -1,13 +1,13 @@
 :root {
-  --mat-bezel: inset 0 1px 0 var(--sheen-2), 0 14px 34px rgba(0, 0, 0, 0.65);
-  --mat-bezel-hover: inset 0 1px 0 var(--sheen-3), 0 22px 46px rgba(0, 0, 0, 0.75), 0 0 32px var(--cyan-22);
+  --mat-bezel: inset 0 1px 0 var(--sheen-2), 0 14px 34px rgba(0, 0, 0, 0.35);
+  --mat-bezel-hover: inset 0 1px 0 var(--sheen-3), 0 22px 46px rgba(0, 0, 0, 0.45), 0 0 32px var(--cyan-22);
 
-  --mat-marquee: 0 0 0 6px #0A0D18, 0 0 0 7px var(--steel-line), 0 26px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 var(--sheen-1);
+  --mat-marquee: 0 0 0 6px #151C2A, 0 0 0 7px var(--steel-line), 0 26px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 var(--sheen-1);
 
-  --mat-deck: inset 0 1px 0 var(--sheen-1), 0 20px 50px rgba(0, 0, 0, 0.7);
+  --mat-deck: inset 0 1px 0 var(--sheen-1), 0 20px 50px rgba(0, 0, 0, 0.35);
 
-  --mat-screen: inset 0 0 46px rgba(0, 0, 0, 0.9), inset 0 0 0 1px var(--cyan-14);
-  --mat-screen-on: inset 0 0 46px rgba(0, 0, 0, 0.75), inset 0 0 0 1px var(--cyan-40), 0 0 26px var(--cyan-14);
+  --mat-screen: inset 0 0 46px rgba(0, 0, 0, 0.5), inset 0 0 0 1px var(--cyan-14);
+  --mat-screen-on: inset 0 0 46px rgba(0, 0, 0, 0.35), inset 0 0 0 1px var(--cyan-40), 0 0 26px var(--cyan-14);
 
   --mat-button-cyan: radial-gradient(circle at 34% 30%, var(--cyan-lit), var(--cyan) 48%, var(--cyan-deep));
   --mat-button-pink: radial-gradient(circle at 34% 30%, var(--pink-lit), var(--pink) 45%, var(--pink-deep));

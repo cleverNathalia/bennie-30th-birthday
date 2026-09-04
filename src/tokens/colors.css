@@ -1,12 +1,12 @@
 :root {
   /* ── Ground ── the cabinet sits in a dark arcade ── */
-  --ink: #04050A;
-  --ink-deep: #03060C;
-  --steel-hi: #1A2033;
-  --steel-lo: #0C101C;
-  --steel-face: #141A2C;
-  --steel-shadow: #080B14;
-  --steel-line: #1D2439;
+  --ink: #0F1419;
+  --ink-deep: #161B24;
+  --steel-hi: #2A3548;
+  --steel-lo: #1A2130;
+  --steel-face: #232D3F;
+  --steel-shadow: #151C2A;
+  --steel-line: #3A4659;
 
   /* ── Signal ── two lit colours, nothing else glows ── */
   --cyan: #00F0FF;

@@ -8,7 +8,8 @@
       "Bash(git commit -m 'Implement arcade cabinet countdown design system *)",
       "Bash(curl -s -I http://localhost:5173)",
       "Bash(rm -rf \"design system/\")",
-      "Bash(git commit -m 'Remove design system reference folder *)"
+      "Bash(git commit -m 'Remove design system reference folder *)",
+      "Bash(git commit -m 'Lighten arcade cabinet color scheme *)"
     ]
   }
 }
