@@ -24,14 +24,6 @@
   background: radial-gradient(ellipse at 50% 45%, transparent 40%, rgba(0, 0, 0, 0.3) 100%);
 }
 
-.crt-scanlines {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 60;
-  mix-blend-mode: multiply;
-  background: var(--crt-scanlines);
-}
 
 .cabinet-content {
   position: relative;

@@ -43,8 +43,6 @@ export default function CountdownPage({ contentData }) {
     <div className="arcade-cabinet">
       {/* CRT Vignette overlay */}
       <div className="crt-vignette" />
-      {/* CRT Scanlines */}
-      <div className="crt-scanlines" />
 
       <div className="cabinet-content">
         {/* Marquee Header */}
