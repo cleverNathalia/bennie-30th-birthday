@@ -5,7 +5,10 @@
       "Bash(curl -s http://localhost:5173)",
       "Bash(powershell -Command ' *)",
       "Bash(npx playwright *)",
-      "Bash(git commit -m 'Implement arcade cabinet countdown design system *)"
+      "Bash(git commit -m 'Implement arcade cabinet countdown design system *)",
+      "Bash(curl -s -I http://localhost:5173)",
+      "Bash(rm -rf \"design system/\")",
+      "Bash(git commit -m 'Remove design system reference folder *)"
     ]
   }
 }
