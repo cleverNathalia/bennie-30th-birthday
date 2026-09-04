@@ -53,7 +53,7 @@ export default function CountdownPage({ contentData }) {
           <div className="marquee-inner">
             <div className="marquee-header">
               <span>Cabinet No. 30</span>
-              <span>Dublin · 18:00 daily</span>
+              <span>Cape Town · 10:00 daily</span>
             </div>
 
             <h1 className="marquee-title">
@@ -107,7 +107,7 @@ export default function CountdownPage({ contentData }) {
             <div className="control-button cyan" />
             <div className="control-button pink" />
           </div>
-          <div className="control-text">Press start · next cartridge loads at 18:00</div>
+          <div className="control-text">Press start · next cartridge loads at 10:00</div>
         </div>
       </div>
 

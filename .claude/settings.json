@@ -15,7 +15,8 @@
       "Bash(git commit -m 'Clear image on hover - remove scanlines and reduce scrim *)",
       "Bash(git commit -m 'Remove CRT scanlines completely *)",
       "Bash(git commit -m 'Add CRT scanlines only to marquee title *)",
-      "Bash(git commit -m 'Brighten cartridge slot images for better clarity *)"
+      "Bash(git commit -m 'Brighten cartridge slot images for better clarity *)",
+      "Bash(git commit -m 'Change unlock time to 10:00 AM Cape Town time *)"
     ]
   }
 }

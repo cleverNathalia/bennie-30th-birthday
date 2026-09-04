@@ -1,8 +1,8 @@
-const DUBLIN_TZ = 'Europe/Dublin'
-const UNLOCK_HOUR = 18
+const CAPE_TOWN_TZ = 'Africa/Johannesburg'
+const UNLOCK_HOUR = 10
 
 function getDublinTime() {
-  const dublinTime = new Date().toLocaleString('en-US', { timeZone: DUBLIN_TZ })
+  const dublinTime = new Date().toLocaleString('en-US', { timeZone: CAPE_TOWN_TZ })
   return new Date(dublinTime)
 }
 
