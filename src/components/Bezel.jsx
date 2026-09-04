@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Bezel({ interactive = false, lit = false, ratio = '3/4', children, footer, style, ...rest }) {
+export function Bezel({ interactive = false, lit = false, ratio = '3/4', hideScanlinesOnHover = false, children, footer, style, ...rest }) {
   const [hover, setHover] = React.useState(false)
   const [press, setPress] = React.useState(false)
   const on = interactive && hover
@@ -40,7 +40,7 @@ export function Bezel({ interactive = false, lit = false, ratio = '3/4', childre
         }}
       >
         {children}
-        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'var(--crt-scanlines-fine)', pointerEvents: 'none' }} />
+        <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'var(--crt-scanlines-fine)', pointerEvents: 'none', opacity: hideScanlinesOnHover ? 0 : 1, transition: 'opacity var(--dur-quick) var(--ease-mech)' }} />
       </div>
       {footer}
     </div>

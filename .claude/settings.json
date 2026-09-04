@@ -9,7 +9,10 @@
       "Bash(curl -s -I http://localhost:5173)",
       "Bash(rm -rf \"design system/\")",
       "Bash(git commit -m 'Remove design system reference folder *)",
-      "Bash(git commit -m 'Lighten arcade cabinet color scheme *)"
+      "Bash(git commit -m 'Lighten arcade cabinet color scheme *)",
+      "Bash(git commit -m 'Add image references for each day *)",
+      "Bash(git commit -m 'Update image extensions to .png *)",
+      "Bash(git commit -m 'Clear image on hover - remove scanlines and reduce scrim *)"
     ]
   }
 }

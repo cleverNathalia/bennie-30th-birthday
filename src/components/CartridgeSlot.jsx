@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import { Bezel } from './Bezel'
 
 export function CartridgeSlot({ day = 1, state = 'locked', label, still, countdown, onOpen }) {
+  const [hovering, setHovering] = useState(false)
   const open = state !== 'locked'
   const statusText = label || (state === 'ready' ? 'Ready' : state === 'cleared' ? 'Cleared' : day === 8 ? 'Final' : 'Locked')
 
@@ -27,11 +29,14 @@ export function CartridgeSlot({ day = 1, state = 'locked', label, still, countdo
     <Bezel
       interactive={open}
       lit={open}
+      hideScanlinesOnHover={hovering && open}
       footer={footer}
       role={open ? 'button' : undefined}
       tabIndex={open ? 0 : -1}
       aria-label={open ? `Play day ${day}` : `Day ${day}, locked`}
       onClick={open ? onOpen : undefined}
+      onMouseEnter={() => setHovering(true)}
+      onMouseLeave={() => setHovering(false)}
       onKeyDown={(e) => {
         if (open && (e.key === 'Enter' || e.key === ' ')) {
           e.preventDefault()
@@ -55,7 +60,7 @@ export function CartridgeSlot({ day = 1, state = 'locked', label, still, countdo
               }}
             />
           ) : null}
-          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'var(--scrim-still)' }} />
+          <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'var(--scrim-still)', opacity: hovering ? 0.3 : 1, transition: 'opacity var(--dur-quick) var(--ease-mech)' }} />
           <div style={{ position: 'relative', zIndex: 2, padding: 'var(--s-3)', display: 'flex', alignItems: 'center', gap: '9px' }}>
             <div
               style={{
