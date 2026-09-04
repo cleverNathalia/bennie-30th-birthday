@@ -1,0 +1,47 @@
+/* MATERIALS — this is what separates the cabinet from flat neon.
+   Nothing here is a single flat drop-shadow. Every surface is described
+   as a stack: a moulding highlight, an ambient occlusion, a cast shadow,
+   and only then a glow. */
+:root{
+/* Moulded plastic bezel — the slot and the deck */
+--mat-bezel:inset 0 1px 0 var(--sheen-2),0 14px 34px rgba(0,0,0,.65); /* @kind shadow */
+--mat-bezel-hover:inset 0 1px 0 var(--sheen-3),0 22px 46px rgba(0,0,0,.75),0 0 32px var(--cyan-22); /* @kind shadow */
+
+/* Marquee — a lightbox behind a black moulding ring */
+--mat-marquee:0 0 0 6px #0A0D18,0 0 0 7px var(--steel-line),0 26px 60px rgba(0,0,0,.8),inset 0 1px 0 var(--sheen-1); /* @kind shadow */
+
+/* Control deck — flatter, wider, sits on the floor */
+--mat-deck:inset 0 1px 0 var(--sheen-1),0 20px 50px rgba(0,0,0,.7); /* @kind shadow */
+
+/* CRT screen — dark, occluded at the edges, faintly rimmed */
+--mat-screen:inset 0 0 46px rgba(0,0,0,.9),inset 0 0 0 1px var(--cyan-14); /* @kind shadow */
+--mat-screen-on:inset 0 0 46px rgba(0,0,0,.75),inset 0 0 0 1px var(--cyan-40),0 0 26px var(--cyan-14); /* @kind shadow */
+
+/* Physical arcade buttons — a sphere lit from upper-left */
+--mat-button-cyan:radial-gradient(circle at 34% 30%,var(--cyan-lit),var(--cyan) 48%,var(--cyan-deep)); /* @kind color */
+--mat-button-pink:radial-gradient(circle at 34% 30%,var(--pink-lit),var(--pink) 45%,var(--pink-deep)); /* @kind color */
+--mat-button-shadow:0 0 18px var(--cyan-40),inset 0 -3px 6px rgba(0,0,0,.45); /* @kind shadow */
+--mat-button-shadow-pink:0 0 22px var(--pink-50),inset 0 -3px 6px rgba(0,0,0,.5); /* @kind shadow */
+
+/* Glow — used sparingly, only on things that are genuinely lit */
+--glow-sm:0 0 16px var(--cyan-35); /* @kind shadow */
+--glow-md:0 0 26px var(--cyan-35); /* @kind shadow */
+--glow-pink-sm:0 0 22px var(--pink-25); /* @kind shadow */
+--glow-text:0 0 18px var(--cyan-55),0 0 46px var(--pink-35); /* @kind shadow */
+--glow-text-sm:0 0 14px var(--cyan-55); /* @kind shadow */
+--glow-text-pink:0 0 14px var(--pink-60); /* @kind shadow */
+
+/* CRT overlays — apply to the page, not to components */
+--crt-scanlines:repeating-linear-gradient(180deg,rgba(0,0,0,0) 0 2px,rgba(0,0,0,.32) 2px 3px); /* @kind other */
+--crt-scanlines-fine:repeating-linear-gradient(180deg,transparent 0 2px,rgba(0,0,0,.35) 2px 4px); /* @kind other */
+--crt-vignette:radial-gradient(ellipse at 50% 45%,transparent 40%,rgba(0,0,0,.75) 100%); /* @kind other */
+
+/* Screen scrim — over a still, so text stays legible */
+--scrim-still:linear-gradient(180deg,rgba(3,6,12,.15) 30%,rgba(3,6,12,.92)); /* @kind other */
+
+/* Backlight wash inside the marquee */
+--marquee-backlight:linear-gradient(180deg,var(--cyan-14),transparent); /* @kind other */
+--marquee-underline:linear-gradient(90deg,transparent,var(--pink),transparent); /* @kind other */
+
+--focus-ring:0 0 0 1px var(--ink),0 0 0 3px var(--cyan-70); /* @kind shadow */
+}

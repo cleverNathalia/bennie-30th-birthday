@@ -1,0 +1,24 @@
+<!-- @dsCard group="Components" viewport="700x340" name="Chrome — Marquee & status" subtitle="Backlit sign, kicker row, readout strip" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ink);font-family:var(--font-mono)}a{color:var(--cyan)}a:hover{color:var(--pink)}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const { Marquee, StatusBar, StatCell, CRTOverlay } = window.ArcadeCountdownDesignSystem_b791c4;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div style={{padding:'22px'}}>
+    <CRTOverlay />
+    <Marquee kickerLeft="Cabinet No. 30" kickerRight="Dublin · 18:00 daily"
+      title={<>PLAYER ONE<br/>TURNS THIRTY</>} subtitle="Eight cartridges · one unlocks a day" />
+    <div style={{height:16}}></div>
+    <StatusBar>
+      <StatCell label="Credits unlocked" value="04 / 08" />
+      <StatCell label="Next cartridge" value="06:41:12" />
+      <StatCell label="Time to birthday" value="6D 04:12" tone="pink" />
+    </StatusBar>
+  </div>
+);
+</script></body></html>

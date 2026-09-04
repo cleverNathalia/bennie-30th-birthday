@@ -1,0 +1,104 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>C — Blueprint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--cy:#3FD9F5;--pk:#FF4D8D;--ink:#050C16;--pap:#071522;--line:rgba(63,217,245,.14);--txt:#bcd9e6}
+html,body{background:var(--ink);color:var(--txt);font-family:'IBM Plex Mono',monospace;min-height:100%}
+body{background-image:linear-gradient(rgba(63,217,245,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(63,217,245,.045) 1px,transparent 1px),linear-gradient(rgba(63,217,245,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(63,217,245,.09) 1px,transparent 1px);background-size:16px 16px,16px 16px,96px 96px,96px 96px}
+.sheet{max-width:1200px;margin:0 auto;padding:26px}
+.plate{border:1px solid rgba(63,217,245,.28);background:rgba(7,21,34,.72);backdrop-filter:blur(3px);position:relative}
+.plate::before,.plate::after{content:'';position:absolute;width:11px;height:11px;border:1px solid rgba(63,217,245,.5)}
+.plate::before{top:7px;left:7px;border-right:0;border-bottom:0}
+.plate::after{bottom:7px;right:7px;border-left:0;border-top:0}
+/* title block */
+.tb{display:grid;grid-template-columns:2.1fr 1fr 1fr 1fr;border-bottom:1px solid rgba(63,217,245,.28)}
+@media(max-width:900px){.tb{grid-template-columns:1fr 1fr}}
+.tbc{padding:16px 20px;border-right:1px solid rgba(63,217,245,.16)}
+.tbc:last-child{border-right:0}
+.k{font-size:8.5px;letter-spacing:.28em;text-transform:uppercase;color:rgba(188,217,230,.42)}
+.v{font-size:13px;margin-top:8px;color:#e2f6ff;letter-spacing:.02em}
+.v.big{font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:21px;letter-spacing:-.01em;color:#eefbff}
+.v.pk{color:var(--pk)}
+.body{padding:34px 30px 30px}
+h1{font-family:'IBM Plex Sans',sans-serif;font-weight:300;font-size:clamp(28px,5vw,52px);line-height:1.06;letter-spacing:-.025em;color:#eefbff;max-width:16ch}
+h1 b{font-weight:600;color:var(--cy)}
+.note{margin-top:16px;max-width:52ch;font-size:12.5px;line-height:1.8;color:rgba(188,217,230,.68)}
+.dimrow{display:flex;align-items:center;gap:12px;margin:30px 0 6px}
+.dimline{flex:1;height:1px;background:repeating-linear-gradient(90deg,rgba(63,217,245,.4) 0 6px,transparent 6px 12px)}
+.dimtxt{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(63,217,245,.62);white-space:nowrap}
+/* modules */
+.mods{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(63,217,245,.2)}
+@media(max-width:940px){.mods{grid-template-columns:repeat(2,1fr)}}
+.mod{position:relative;border-right:1px solid rgba(63,217,245,.14);border-bottom:1px solid rgba(63,217,245,.14);padding:20px 18px 18px;min-height:212px;display:flex;flex-direction:column;justify-content:space-between;transition:background .3s,box-shadow .3s}
+.mod.open{cursor:pointer}
+.mod.open:hover{background:rgba(63,217,245,.06);box-shadow:inset 0 0 0 1px rgba(63,217,245,.5)}
+.mod.open:active{background:rgba(63,217,245,.1)}
+.mhead{display:flex;justify-content:space-between;align-items:flex-start}
+.pn{font-size:9px;letter-spacing:.2em;color:rgba(188,217,230,.42)}
+.stamp{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;padding:3px 7px;border:1px solid}
+.mod.open .stamp{color:var(--cy);border-color:rgba(63,217,245,.5)}
+.mod.locked .stamp{color:var(--pk);border-color:rgba(255,77,141,.45)}
+.mnum{font-family:'IBM Plex Sans',sans-serif;font-weight:300;font-size:52px;line-height:1;letter-spacing:-.04em;color:#eefbff;margin:14px 0 4px;font-variant-numeric:tabular-nums}
+.mod.locked .mnum{color:rgba(188,217,230,.24)}
+.mttl{font-family:'IBM Plex Sans',sans-serif;font-size:13.5px;color:#dff4ff}
+.mod.locked .mttl{color:rgba(188,217,230,.4)}
+.msub{font-size:9.5px;letter-spacing:.16em;margin-top:7px;color:rgba(63,217,245,.6);font-variant-numeric:tabular-nums}
+.mod.locked .msub{color:rgba(255,77,141,.68)}
+.leader{position:absolute;right:14px;bottom:16px;width:26px;height:26px;border:1px solid rgba(63,217,245,.4);display:grid;place-items:center;font-size:10px;color:var(--cy)}
+.mod.locked .leader{border-color:rgba(255,77,141,.35);color:var(--pk)}
+/* revision + photos */
+.cols{display:grid;grid-template-columns:1fr 1.35fr;gap:26px;margin-top:30px}
+@media(max-width:940px){.cols{grid-template-columns:1fr}}
+.rev{border:1px solid rgba(63,217,245,.2)}
+.rrow{display:grid;grid-template-columns:44px 1fr 78px;border-bottom:1px solid rgba(63,217,245,.12);font-size:10.5px}
+.rrow:last-child{border-bottom:0}
+.rrow div{padding:10px 12px;border-right:1px solid rgba(63,217,245,.12)}
+.rrow div:last-child{border-right:0;color:rgba(188,217,230,.5)}
+.rrow.h div{font-size:8.5px;letter-spacing:.24em;text-transform:uppercase;color:rgba(188,217,230,.42)}
+.figs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fig{border:1px solid rgba(63,217,245,.2);padding:9px}
+.figcap{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(63,217,245,.55);padding-top:9px}
+a{color:var(--cy)}a:hover{color:var(--pk)}
+</style></head><body>
+<div class="sheet"><div class="plate">
+<div class="tb">
+<div class="tbc"><div class="k">Assembly</div><div class="v big">BIRTHDAY-30 / EIGHT-DAY SEQUENCE</div></div>
+<div class="tbc"><div class="k">Drawn by</div><div class="v">D. — Cape Town</div></div>
+<div class="tbc"><div class="k">For</div><div class="v">B. — Dublin</div></div>
+<div class="tbc"><div class="k">Commissioning</div><div class="v pk">10 SEP 2026</div></div>
+</div>
+<div class="body">
+<h1>Eight modules. <b>One comes online each day.</b></h1>
+<p class="note">Sequence begins 03 SEP 2026. Each module releases at 18:00 IST (Dublin). Release is time-gated and cannot be overridden — see Note 3. Final module 08 is the commissioning event.</p>
+
+<div class="dimrow"><span class="dimtxt">◀ 03 SEP</span><span class="dimline"></span><span class="dimtxt">Sequence — 8 modules @ 24h</span><span class="dimline"></span><span class="dimtxt">10 SEP ▶</span></div>
+
+<div class="mods">
+<div class="mod open"><div class="mhead"><span class="pn">MOD-01</span><span class="stamp">Online</span></div><div><div class="mnum">01</div><div class="mttl">Notice of intent</div><div class="msub">RELEASED 03 SEP 18:00</div></div><div class="leader">▶</div></div>
+<div class="mod open"><div class="mhead"><span class="pn">MOD-02</span><span class="stamp">Online</span></div><div><div class="mnum">02</div><div class="mttl">The empty chair</div><div class="msub">RELEASED 04 SEP 18:00</div></div><div class="leader">▶</div></div>
+<div class="mod open"><div class="mhead"><span class="pn">MOD-03</span><span class="stamp">Online</span></div><div><div class="mnum">03</div><div class="mttl">Thirty true things</div><div class="msub">RELEASED 05 SEP 18:00</div></div><div class="leader">▶</div></div>
+<div class="mod open"><div class="mhead"><span class="pn">MOD-04</span><span class="stamp">New</span></div><div><div class="mnum">04</div><div class="mttl">Signal, one take</div><div class="msub">RELEASED 06 SEP 18:00</div></div><div class="leader">▶</div></div>
+<div class="mod locked"><div class="mhead"><span class="pn">MOD-05</span><span class="stamp">Pending</span></div><div><div class="mnum">05</div><div class="mttl">Sealed</div><div class="msub">T− 06:41:12</div></div><div class="leader">◼</div></div>
+<div class="mod locked"><div class="mhead"><span class="pn">MOD-06</span><span class="stamp">Pending</span></div><div><div class="mnum">06</div><div class="mttl">Sealed</div><div class="msub">T− 1D 06:41</div></div><div class="leader">◼</div></div>
+<div class="mod locked"><div class="mhead"><span class="pn">MOD-07</span><span class="stamp">Pending</span></div><div><div class="mnum">07</div><div class="mttl">Sealed</div><div class="msub">T− 2D 06:41</div></div><div class="leader">◼</div></div>
+<div class="mod locked"><div class="mhead"><span class="pn">MOD-08</span><span class="stamp">Commission</span></div><div><div class="mnum">08</div><div class="mttl">Sealed</div><div class="msub">T− 3D 06:41</div></div><div class="leader">◼</div></div>
+</div>
+
+<div class="cols">
+<div class="rev">
+<div class="rrow h"><div>Rev</div><div>Note</div><div>Status</div></div>
+<div class="rrow"><div>1</div><div>Modules release 18:00 IST daily</div><div>Fixed</div></div>
+<div class="rrow"><div>2</div><div>Sequence is one-directional</div><div>Fixed</div></div>
+<div class="rrow"><div>3</div><div>No override. Ever.</div><div>Fixed</div></div>
+<div class="rrow"><div>4</div><div>Archive remains open after 10 SEP</div><div>Open</div></div>
+</div>
+<div class="figs">
+<div class="fig"><image-slot id="c-f1" shape="rect" fit="cover" style="height:190px" placeholder="Photo of the two of you"></image-slot><div class="figcap">Fig. 1 — subject pair, 2013–2026</div></div>
+<div class="fig"><image-slot id="c-f2" shape="rect" fit="cover" style="height:190px" placeholder="Photo of Bennie"></image-slot><div class="figcap">Fig. 2 — subject, Dublin</div></div>
+</div>
+</div>
+</div>
+</div></div>
+</body></html>

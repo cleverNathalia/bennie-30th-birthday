@@ -1,0 +1,450 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/cabinet/**",
+              "components/chrome/**",
+              "components/controls/**",
+              "components/readout/**",
+              "components/views/**",
+              "explorations/**",
+              "ui_kits/cabinet/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Michroma|IBM Plex Mono))/i]",
+        "message": "Font not provided by the design system. Available: Michroma, IBM Plex Mono."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='AttractScreen'] > JSXAttribute > JSXIdentifier[name!=/^(?:image|title|subtitle|prompt|onStart|key|ref|className|style|children)$/]",
+        "message": "<AttractScreen> doesn't accept that prop. Declared props: image, title, subtitle, prompt, onStart."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Bezel'] > JSXAttribute > JSXIdentifier[name!=/^(?:interactive|lit|ratio|children|footer|style|key|ref|className|style|children)$/]",
+        "message": "<Bezel> doesn't accept that prop. Declared props: interactive, lit, ratio, children, footer, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CartridgeSlot'] > JSXAttribute > JSXIdentifier[name!=/^(?:day|state|label|still|countdown|onOpen|key|ref|className|style|children)$/]",
+        "message": "<CartridgeSlot> doesn't accept that prop. Declared props: day, state, label, still, countdown, onOpen."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CartridgeSlot'] > JSXAttribute[name.name='state'] > Literal[value!=/^(?:cleared|ready|locked)$/]",
+        "message": "<CartridgeSlot> state must be one of 'cleared' | 'ready' | 'locked'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ControlDeck'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|note|key|ref|className|style|children)$/]",
+        "message": "<ControlDeck> doesn't accept that prop. Declared props: children, note."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='CRTOverlay'] > JSXAttribute > JSXIdentifier[name!=/^(?:scanlines|vignette|flicker|key|ref|className|style|children)$/]",
+        "message": "<CRTOverlay> doesn't accept that prop. Declared props: scanlines, vignette, flicker."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DayView'] > JSXAttribute > JSXIdentifier[name!=/^(?:day|eyebrow|title|onClose|children|key|ref|className|style|children)$/]",
+        "message": "<DayView> doesn't accept that prop. Declared props: day, eyebrow, title, onClose, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='GlyphButton'] > JSXAttribute > JSXIdentifier[name!=/^(?:tone|size|children|disabled|key|ref|className|style|children)$/]",
+        "message": "<GlyphButton> doesn't accept that prop. Declared props: tone, size, children, disabled."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='GlyphButton'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:cyan|pink)$/]",
+        "message": "<GlyphButton> tone must be one of 'cyan' | 'pink'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='HighScoreRow'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|value|key|ref|className|style|children)$/]",
+        "message": "<HighScoreRow> doesn't accept that prop. Declared props: label, value."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Marquee'] > JSXAttribute > JSXIdentifier[name!=/^(?:kickerLeft|kickerRight|title|subtitle|children|key|ref|className|style|children)$/]",
+        "message": "<Marquee> doesn't accept that prop. Declared props: kickerLeft, kickerRight, title, subtitle, children."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ReelPhoto'] > JSXAttribute > JSXIdentifier[name!=/^(?:url|caption|key|ref|className|style|children)$/]",
+        "message": "<ReelPhoto> doesn't accept that prop. Declared props: url, caption."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='StatusBar'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|columns|key|ref|className|style|children)$/]",
+        "message": "<StatusBar> doesn't accept that prop. Declared props: children, columns."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Timer'] > JSXAttribute > JSXIdentifier[name!=/^(?:target|value|size|tone|segmented|key|ref|className|style|children)$/]",
+        "message": "<Timer> doesn't accept that prop. Declared props: target, value, size, tone, segmented."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Timer'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:sm|md|lg)$/]",
+        "message": "<Timer> size must be one of 'sm' | 'md' | 'lg'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Timer'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:cyan|pink)$/]",
+        "message": "<Timer> tone must be one of 'cyan' | 'pink'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "AttractScreen": {
+        "replaces": []
+      },
+      "Bezel": {
+        "replaces": []
+      },
+      "CartridgeSlot": {
+        "replaces": []
+      },
+      "ControlDeck": {
+        "replaces": []
+      },
+      "CRTOverlay": {
+        "replaces": []
+      },
+      "DayView": {
+        "replaces": []
+      },
+      "GlyphButton": {
+        "replaces": []
+      },
+      "HighScoreRow": {
+        "replaces": []
+      },
+      "Marquee": {
+        "replaces": []
+      },
+      "ReelPhoto": {
+        "replaces": []
+      },
+      "StatusBar": {
+        "replaces": []
+      },
+      "Timer": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--bezel-pad",
+      "--bw-frame",
+      "--bw-hair",
+      "--bw-outer",
+      "--crt-scanlines",
+      "--crt-scanlines-fine",
+      "--crt-vignette",
+      "--cyan",
+      "--cyan-04",
+      "--cyan-08",
+      "--cyan-14",
+      "--cyan-18",
+      "--cyan-22",
+      "--cyan-35",
+      "--cyan-40",
+      "--cyan-55",
+      "--cyan-70",
+      "--cyan-deep",
+      "--cyan-lit",
+      "--dur-base",
+      "--dur-boot",
+      "--dur-page",
+      "--dur-quick",
+      "--dur-tap",
+      "--ease-in",
+      "--ease-mech",
+      "--ease-out",
+      "--edge",
+      "--edge-alert",
+      "--edge-lit",
+      "--focus-ring",
+      "--font-body",
+      "--font-display",
+      "--font-mono",
+      "--fs-body",
+      "--fs-body-lg",
+      "--fs-body-sm",
+      "--fs-caption",
+      "--fs-display",
+      "--fs-display-lg",
+      "--fs-display-sm",
+      "--fs-label",
+      "--fs-label-lg",
+      "--fs-lede",
+      "--fs-marquee",
+      "--fs-micro",
+      "--fw-medium",
+      "--fw-regular",
+      "--fw-semibold",
+      "--glow-md",
+      "--glow-pink-sm",
+      "--glow-sm",
+      "--glow-text",
+      "--glow-text-pink",
+      "--glow-text-sm",
+      "--hairline",
+      "--ink",
+      "--ink-deep",
+      "--lh-body",
+      "--lh-display",
+      "--lh-heading",
+      "--lift-hover",
+      "--lift-press",
+      "--ls-display",
+      "--ls-label",
+      "--ls-tight",
+      "--ls-wide",
+      "--ls-widest",
+      "--marquee-backlight",
+      "--marquee-pad",
+      "--marquee-underline",
+      "--mat-bezel",
+      "--mat-bezel-hover",
+      "--mat-button-cyan",
+      "--mat-button-pink",
+      "--mat-button-shadow",
+      "--mat-button-shadow-pink",
+      "--mat-deck",
+      "--mat-marquee",
+      "--mat-screen",
+      "--mat-screen-on",
+      "--numerals",
+      "--phos",
+      "--phos-bright",
+      "--phos-dim",
+      "--phos-faint",
+      "--pink",
+      "--pink-10",
+      "--pink-25",
+      "--pink-35",
+      "--pink-50",
+      "--pink-60",
+      "--pink-deep",
+      "--pink-lit",
+      "--press-scale",
+      "--rack-cols",
+      "--rack-gap",
+      "--radius-button",
+      "--radius-none",
+      "--s-1",
+      "--s-10",
+      "--s-2",
+      "--s-3",
+      "--s-4",
+      "--s-5",
+      "--s-6",
+      "--s-7",
+      "--s-8",
+      "--s-9",
+      "--scanline-pitch",
+      "--scrim-still",
+      "--sheen-1",
+      "--sheen-2",
+      "--sheen-3",
+      "--shell-max",
+      "--shell-pad",
+      "--slot-ratio",
+      "--stagger",
+      "--state-cleared",
+      "--state-locked",
+      "--state-ready",
+      "--steel-face",
+      "--steel-hi",
+      "--steel-line",
+      "--steel-lo",
+      "--steel-shadow",
+      "--surface-chassis",
+      "--surface-marquee",
+      "--surface-recess",
+      "--surface-room",
+      "--surface-screen",
+      "--text-alert",
+      "--text-body",
+      "--text-heading",
+      "--text-label",
+      "--text-signal",
+      "--type-body",
+      "--type-label",
+      "--type-marquee",
+      "--type-value"
+    ],
+    "tokenKinds": {
+      "--ink": "color",
+      "--ink-deep": "color",
+      "--steel-hi": "color",
+      "--steel-lo": "color",
+      "--steel-face": "color",
+      "--steel-shadow": "shadow",
+      "--steel-line": "color",
+      "--cyan": "color",
+      "--pink": "color",
+      "--cyan-lit": "color",
+      "--pink-lit": "color",
+      "--cyan-deep": "color",
+      "--pink-deep": "color",
+      "--phos": "color",
+      "--phos-bright": "color",
+      "--phos-dim": "color",
+      "--phos-faint": "color",
+      "--cyan-04": "color",
+      "--cyan-08": "color",
+      "--cyan-14": "color",
+      "--cyan-18": "color",
+      "--cyan-22": "color",
+      "--cyan-35": "color",
+      "--cyan-40": "color",
+      "--cyan-55": "color",
+      "--cyan-70": "color",
+      "--pink-10": "color",
+      "--pink-25": "color",
+      "--pink-35": "color",
+      "--pink-50": "color",
+      "--pink-60": "color",
+      "--sheen-1": "color",
+      "--sheen-2": "color",
+      "--sheen-3": "color",
+      "--hairline": "color",
+      "--surface-room": "color",
+      "--surface-chassis": "color",
+      "--surface-marquee": "color",
+      "--surface-screen": "color",
+      "--surface-recess": "color",
+      "--text-body": "font",
+      "--text-heading": "font",
+      "--text-label": "font",
+      "--text-signal": "font",
+      "--text-alert": "font",
+      "--state-cleared": "color",
+      "--state-ready": "color",
+      "--state-locked": "color",
+      "--edge": "color",
+      "--edge-lit": "color",
+      "--edge-alert": "color",
+      "--font-display": "font",
+      "--font-mono": "font",
+      "--font-body": "font",
+      "--fs-marquee": "font",
+      "--fs-display-lg": "font",
+      "--fs-display": "font",
+      "--fs-display-sm": "font",
+      "--fs-micro": "font",
+      "--fs-label": "font",
+      "--fs-label-lg": "font",
+      "--fs-caption": "font",
+      "--fs-body-sm": "font",
+      "--fs-body": "font",
+      "--fs-body-lg": "font",
+      "--fs-lede": "font",
+      "--fw-regular": "font",
+      "--fw-medium": "font",
+      "--fw-semibold": "font",
+      "--ls-display": "font",
+      "--ls-tight": "font",
+      "--ls-label": "font",
+      "--ls-wide": "font",
+      "--ls-widest": "font",
+      "--lh-display": "font",
+      "--lh-heading": "font",
+      "--lh-body": "font",
+      "--numerals": "other",
+      "--type-marquee": "font",
+      "--type-label": "font",
+      "--type-value": "font",
+      "--type-body": "font",
+      "--s-1": "spacing",
+      "--s-2": "spacing",
+      "--s-3": "spacing",
+      "--s-4": "spacing",
+      "--s-5": "spacing",
+      "--s-6": "spacing",
+      "--s-7": "spacing",
+      "--s-8": "spacing",
+      "--s-9": "spacing",
+      "--s-10": "spacing",
+      "--radius-none": "radius",
+      "--radius-button": "radius",
+      "--bezel-pad": "spacing",
+      "--marquee-pad": "spacing",
+      "--shell-pad": "spacing",
+      "--shell-max": "spacing",
+      "--slot-ratio": "other",
+      "--rack-cols": "other",
+      "--rack-gap": "spacing",
+      "--scanline-pitch": "spacing",
+      "--bw-hair": "spacing",
+      "--bw-frame": "spacing",
+      "--bw-outer": "spacing",
+      "--mat-bezel": "shadow",
+      "--mat-bezel-hover": "shadow",
+      "--mat-marquee": "shadow",
+      "--mat-deck": "shadow",
+      "--mat-screen": "shadow",
+      "--mat-screen-on": "shadow",
+      "--mat-button-cyan": "color",
+      "--mat-button-pink": "color",
+      "--mat-button-shadow": "shadow",
+      "--mat-button-shadow-pink": "shadow",
+      "--glow-sm": "shadow",
+      "--glow-md": "shadow",
+      "--glow-pink-sm": "shadow",
+      "--glow-text": "shadow",
+      "--glow-text-sm": "shadow",
+      "--glow-text-pink": "shadow",
+      "--crt-scanlines": "other",
+      "--crt-scanlines-fine": "other",
+      "--crt-vignette": "other",
+      "--scrim-still": "other",
+      "--marquee-backlight": "other",
+      "--marquee-underline": "other",
+      "--focus-ring": "shadow",
+      "--dur-tap": "other",
+      "--dur-quick": "other",
+      "--dur-base": "other",
+      "--dur-page": "other",
+      "--dur-boot": "other",
+      "--ease-mech": "other",
+      "--ease-out": "other",
+      "--ease-in": "other",
+      "--lift-hover": "spacing",
+      "--lift-press": "spacing",
+      "--press-scale": "other",
+      "--stagger": "other"
+    },
+    "fontFamilies": [
+      "IBM Plex Mono",
+      "Michroma"
+    ]
+  }
+}

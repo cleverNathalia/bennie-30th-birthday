@@ -1,0 +1,57 @@
+/* Glow IS the shadow system. There are no soft grey drop-shadows anywhere
+   in this brand — every shadow is a coloured bloom of cyan or pink. */
+:root{
+/* Text glow */
+--glow-text-cyan:0 0 10px var(--neon-cyan); /* @kind other */
+--glow-text-cyan-soft:0 0 5px var(--cyan-50); /* @kind other */
+--glow-text-pink:0 0 10px var(--neon-pink); /* @kind other */
+--glow-text-pink-soft:0 0 8px var(--pink-40); /* @kind other */
+--glow-text-title:0 0 10px var(--neon-cyan),0 0 20px var(--neon-pink),0 0 30px var(--neon-cyan); /* @kind other */
+--glow-text-numeral:0 0 10px var(--pink-60),0 0 20px var(--cyan-30); /* @kind other */
+
+/* Box glow */
+--glow-box-cyan:0 0 10px var(--cyan-40); /* @kind other */
+--glow-box-cyan-md:0 0 15px var(--cyan-40); /* @kind other */
+--glow-box-cyan-lg:0 0 25px var(--cyan-80); /* @kind other */
+--glow-box-pink:0 0 10px var(--neon-pink); /* @kind other */
+--glow-box-pink-lg:0 0 20px var(--neon-cyan); /* @kind other */
+--glow-box-modal:0 0 50px var(--cyan-50),inset 0 0 30px var(--cyan-10),0 0 100px var(--pink-30); /* @kind other */
+--glow-box-media:0 0 20px var(--cyan-30); /* @kind other */
+--glow-box-spinner:0 0 30px var(--cyan-80); /* @kind other */
+
+/* Inset glow — how panels get depth without a shadow */
+--inset-cyan:inset 0 0 20px var(--cyan-20); /* @kind other */
+--inset-cyan-soft:inset 0 0 20px var(--cyan-10); /* @kind other */
+
+/* SVG drop-shadow filters */
+--filter-panel:drop-shadow(0 0 20px var(--cyan-30)); /* @kind other */
+--filter-panel-unlocked:drop-shadow(0 0 20px var(--cyan-50)); /* @kind other */
+--filter-panel-hover:drop-shadow(0 0 30px var(--cyan-80)); /* @kind other */
+--filter-panel-locked:drop-shadow(0 0 15px var(--pink-40)); /* @kind other */
+--filter-badge:drop-shadow(0 0 15px var(--cyan-40)); /* @kind other */
+--filter-badge-locked:drop-shadow(0 0 10px var(--pink-30)); /* @kind other */
+--filter-ring:drop-shadow(0 0 10px var(--pink-40)); /* @kind other */
+--filter-ring-hover:drop-shadow(0 0 20px var(--pink-80)); /* @kind other */
+--filter-lock:drop-shadow(0 0 20px var(--pink-60)); /* @kind other */
+
+/* Blur */
+--blur-scrim:blur(12px); /* @kind other */
+--blur-modal:blur(10px); /* @kind other */
+--blur-scrim-enter:blur(8px); /* @kind other */
+
+/* Strokes & dashes */
+--dash-badge:8 4; /* @kind other */
+--dash-play:6 4; /* @kind other */
+--stroke-panel:2; /* @kind other */
+--stroke-grid:0.5; /* @kind other */
+--stroke-detail:1; /* @kind other */
+
+/* Focus */
+--focus-ring:3px solid var(--state-focus-ring); /* @kind other */
+--focus-offset:4px; /* @kind other */
+
+/* Grid texture opacities */
+--opacity-grid:0.15; /* @kind other */
+--opacity-locked-panel:0.7; /* @kind other */
+--opacity-particles:0.4; /* @kind other */
+}

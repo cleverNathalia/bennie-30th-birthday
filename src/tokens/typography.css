@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Michroma&display=swap');
+
+:root {
+  --font-display: 'Michroma', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+  --font-body: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Display — Michroma */
+  --fs-marquee: clamp(26px, 5.4vw, 58px);
+  --fs-display-lg: 34px;
+  --fs-display: 21px;
+  --fs-display-sm: 15px;
+
+  /* Mono — the working scale */
+  --fs-micro: 8.5px;
+  --fs-label: 9px;
+  --fs-label-lg: 10px;
+  --fs-caption: 11px;
+  --fs-body-sm: 12px;
+  --fs-body: 13px;
+  --fs-body-lg: 15px;
+  --fs-lede: 16.5px;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+
+  /* Tracking */
+  --ls-display: 0.04em;
+  --ls-tight: 0.02em;
+  --ls-label: 0.2em;
+  --ls-wide: 0.28em;
+  --ls-widest: 0.4em;
+
+  --lh-display: 1;
+  --lh-heading: 1.06;
+  --lh-body: 1.7;
+
+  --numerals: tabular-nums;
+
+  /* Roles */
+  --type-marquee: var(--fs-marquee) / var(--lh-display) var(--font-display);
+  --type-label: var(--fw-medium) var(--fs-label) / 1.2 var(--font-mono);
+  --type-value: var(--fs-display) / 1 var(--font-display);
+  --type-body: var(--fw-regular) var(--fs-body) / var(--lh-body) var(--font-mono);
+}

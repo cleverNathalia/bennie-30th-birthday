@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git init *)"
+      "Bash(git init *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(powershell -Command ' *)",
+      "Bash(npx playwright *)",
+      "Bash(git commit -m 'Implement arcade cabinet countdown design system *)"
     ]
   }
 }

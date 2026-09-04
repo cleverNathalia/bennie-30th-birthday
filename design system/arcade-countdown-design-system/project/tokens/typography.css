@@ -1,0 +1,45 @@
+:root{
+--font-display:'Michroma',sans-serif; /* @kind font */
+--font-mono:'IBM Plex Mono',ui-monospace,monospace; /* @kind font */
+--font-body:'IBM Plex Mono',ui-monospace,monospace; /* @kind font */
+
+/* Display — Michroma, one weight, used four times a page at most */
+--fs-marquee:clamp(26px,5.4vw,58px); /* @kind font */
+--fs-display-lg:34px; /* @kind font */
+--fs-display:21px; /* @kind font */
+--fs-display-sm:15px; /* @kind font */
+
+/* Mono — the working scale */
+--fs-micro:8.5px;  /* @kind font */ /* corner stamps */
+--fs-label:9px;    /* @kind font */ /* uppercase field labels */
+--fs-label-lg:10px;/* @kind font */ /* status kicker */
+--fs-caption:11px; /* @kind font */
+--fs-body-sm:12px; /* @kind font */
+--fs-body:13px;    /* @kind font */
+--fs-body-lg:15px; /* @kind font */
+--fs-lede:16.5px;  /* @kind font */
+
+--fw-regular:400; /* @kind font */
+--fw-medium:500; /* @kind font */
+--fw-semibold:600; /* @kind font */
+
+/* Tracking — labels are tracked far out, display is nearly normal.
+   This is the inversion that stops it reading as generic neon. */
+--ls-display:.04em; /* @kind font */
+--ls-tight:.02em; /* @kind font */
+--ls-label:.20em; /* @kind font */
+--ls-wide:.28em; /* @kind font */
+--ls-widest:.40em; /* @kind font */
+
+--lh-display:1; /* @kind font */
+--lh-heading:1.06; /* @kind font */
+--lh-body:1.7; /* @kind font */
+
+--numerals:tabular-nums; /* @kind other */
+
+/* Roles */
+--type-marquee:var(--fs-marquee)/var(--lh-display) var(--font-display); /* @kind font */
+--type-label:var(--fw-medium) var(--fs-label)/1.2 var(--font-mono); /* @kind font */
+--type-value:var(--fs-display)/1 var(--font-display); /* @kind font */
+--type-body:var(--fw-regular) var(--fs-body)/var(--lh-body) var(--font-mono); /* @kind font */
+}

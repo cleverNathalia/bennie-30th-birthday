@@ -1,0 +1,10 @@
+/* Two faces, both from Google Fonts.
+   Michroma — the marquee face. Wide, mechanical, single weight. Display only.
+   IBM Plex Mono — everything else: labels, timers, body, data.
+   No local binaries ship with this system; consumers load the CDN links below.
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+*/
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=IBM+Plex+Mono:wght@400;500;600&display=swap');

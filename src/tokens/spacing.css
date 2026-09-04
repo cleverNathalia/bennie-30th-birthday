@@ -1,0 +1,32 @@
+:root {
+  /* Rhythm */
+  --s-1: 4px;
+  --s-2: 7px;
+  --s-3: 11px;
+  --s-4: 14px;
+  --s-5: 18px;
+  --s-6: 22px;
+  --s-7: 26px;
+  --s-8: 34px;
+  --s-9: 52px;
+  --s-10: 80px;
+
+  /* Geometry */
+  --radius-none: 0;
+  --radius-button: 50%;
+
+  /* Structural */
+  --bezel-pad: 11px;
+  --marquee-pad: 30px 34px 26px;
+  --shell-pad: 34px 24px 80px;
+  --shell-max: 1180px;
+  --slot-ratio: 3 / 4;
+  --rack-cols: 4;
+  --rack-gap: 18px;
+  --scanline-pitch: 3px;
+
+  /* Borders */
+  --bw-hair: 1px;
+  --bw-frame: 1px;
+  --bw-outer: 6px;
+}
