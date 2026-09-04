@@ -48,6 +48,7 @@ export default function CountdownPage({ contentData }) {
         {/* Marquee Header */}
         <div className="marquee">
           <div className="marquee-backlight" />
+          <div className="marquee-scanlines" />
 
           <div className="marquee-inner">
             <div className="marquee-header">

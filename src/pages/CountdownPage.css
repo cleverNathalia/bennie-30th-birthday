@@ -67,7 +67,7 @@
 
 .marquee-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .marquee-header {
@@ -111,6 +111,15 @@
   height: 2px;
   filter: blur(1px);
   background: var(--marquee-underline);
+}
+
+.marquee-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--crt-scanlines);
+  mix-blend-mode: multiply;
+  z-index: 1;
 }
 
 /* Stats Grid */
