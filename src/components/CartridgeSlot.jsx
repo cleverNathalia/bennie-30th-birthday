@@ -51,7 +51,7 @@ export function CartridgeSlot({ day = 1, state = 'locked', label, still, countdo
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                filter: 'saturate(.5) contrast(1.1)',
+                filter: 'saturate(0.8) contrast(1.15) brightness(1.1)',
               }}
             />
           ) : null}

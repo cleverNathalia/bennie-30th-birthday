@@ -14,7 +14,8 @@
       "Bash(git commit -m 'Update image extensions to .png *)",
       "Bash(git commit -m 'Clear image on hover - remove scanlines and reduce scrim *)",
       "Bash(git commit -m 'Remove CRT scanlines completely *)",
-      "Bash(git commit -m 'Add CRT scanlines only to marquee title *)"
+      "Bash(git commit -m 'Add CRT scanlines only to marquee title *)",
+      "Bash(git commit -m 'Brighten cartridge slot images for better clarity *)"
     ]
   }
 }
