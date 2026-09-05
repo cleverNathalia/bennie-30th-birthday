@@ -22,13 +22,9 @@
       "day": 3,
       "date": "2026-09-05",
       "title": "Day Three",
-      "text": "Thirty true things...",
-      "type": "text",
-      "items": [
-        "[Add one-liner for year 1]",
-        "[Add one-liner for year 2]",
-        "[Add one-liner for year 3]"
-      ],
+      "text": "Vandag dans ons dat jy binnekort n nuwe era intree! Whoop whoop, dance with me hun 💃 Net 5 slapies tot jou bday!",
+      "type": "video",
+      "videoLink": "https://drive.google.com/file/d/19fLb_xKtwfspbyHb-GU3U8sMrNDWZ5iU/preview",
       "still": "/images/bennie-day2.png",
       "unlockHour": 16
     },
