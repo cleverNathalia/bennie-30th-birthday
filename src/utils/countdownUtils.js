@@ -6,9 +6,9 @@ function getDublinTime() {
   return new Date(dublinTime)
 }
 
-function getUnlockDate(contentDate) {
+function getUnlockDate(contentDate, unlockHour = UNLOCK_HOUR) {
   const date = new Date(contentDate)
-  date.setHours(UNLOCK_HOUR, 0, 0, 0)
+  date.setHours(unlockHour, 0, 0, 0)
   return date
 }
 
@@ -29,7 +29,7 @@ export function calculateSlotData(contentData, testMode = false) {
   const now = getDublinTime()
   const slots = contentData.doors.map((door, index) => {
     const day = index + 1
-    const unlockDate = getUnlockDate(door.date)
+    const unlockDate = getUnlockDate(door.date, door.unlockHour)
 
     let state = 'locked'
     let countdown = undefined

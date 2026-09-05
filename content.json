@@ -29,7 +29,8 @@
         "[Add one-liner for year 2]",
         "[Add one-liner for year 3]"
       ],
-      "still": "/images/bennie-day2.png"
+      "still": "/images/bennie-day2.png",
+      "unlockHour": 16
     },
     {
       "day": 4,

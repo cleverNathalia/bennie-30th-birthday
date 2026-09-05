@@ -24,7 +24,13 @@
       "Bash(git checkout *)",
       "Bash(git merge *)",
       "Bash(git stash *)",
-      "Bash(git commit -m 'Style modal to match arcade cabinet theme *)"
+      "Bash(git commit -m 'Style modal to match arcade cabinet theme *)",
+      "Bash(git commit -m 'Add Netlify configuration for proper MIME types and routing *)",
+      "Bash(cp content.json public/content.json)",
+      "Bash(git commit -m 'Move content.json to public folder for Netlify *)",
+      "Bash(git commit -m 'Update daily countdown messages with personalized birthday wishes *)",
+      "Bash(git commit -m 'Update day 1 message - 7 slapies to birthday *)",
+      "Bash(git commit -m 'Swap image assignments for days 2 and 4 *)"
     ]
   }
 }
