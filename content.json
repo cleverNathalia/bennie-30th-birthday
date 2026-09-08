@@ -63,7 +63,8 @@
           "caption": "[Photo 2 caption]"
         }
       ],
-      "still": "/images/bennie-day6.png"
+      "still": "/images/bennie-day6.png",
+      "unlockHour": 13
     },
     {
       "day": 7,
