@@ -51,18 +51,9 @@
       "day": 6,
       "date": "2026-09-08",
       "title": "Day Six",
-      "text": "Thirteen years in photos.",
-      "type": "gallery",
-      "photos": [
-        {
-          "url": "https://drive.google.com/uc?export=view&id=PLACEHOLDER",
-          "caption": "[Photo 1 caption]"
-        },
-        {
-          "url": "https://drive.google.com/uc?export=view&id=PLACEHOLDER",
-          "caption": "[Photo 2 caption]"
-        }
-      ],
+      "text": "Ek het jou klaar gese hoekom ek so lief is vir jou ❤️, maar kom ons kyk wat se jou vriende? 'Wat is jou gunsteling ding van Bennie?' was die vraag. Net 2 slapies tot jou bday!",
+      "type": "video",
+      "videoLink": "https://drive.google.com/file/d/1k7WaTYdBbXFNRtv6Ufzh2thP5RhutkIM/preview",
       "still": "/images/bennie-day6.png",
       "unlockHour": 13
     },

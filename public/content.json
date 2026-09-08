@@ -51,7 +51,17 @@
       "day": 6,
       "date": "2026-09-08",
       "title": "Day Six",
-      "text": "Thirteen years in photos.",
+      "text": "Ek het jou klaar gese hoekom ek so lief is vir jou ❤️, maar kom ons kyk wat se jou vriende? 'Wat is jou gunsteling ding van Bennie?' was die vraag. Net 2 slapies tot jou bday!",
+      "type": "video",
+      "videoLink": "https://drive.google.com/file/d/1k7WaTYdBbXFNRtv6Ufzh2thP5RhutkIM/preview",
+      "still": "/images/bennie-day6.png",
+      "unlockHour": 13
+    },
+    {
+      "day": 7,
+      "date": "2026-09-09",
+      "title": "Day Seven",
+      "text": "[Your final message before the birthday]",
       "type": "gallery",
       "photos": [
         {
@@ -63,16 +73,6 @@
           "caption": "[Photo 2 caption]"
         }
       ],
-      "still": "/images/bennie-day6.png",
-      "unlockHour": 13
-    },
-    {
-      "day": 7,
-      "date": "2026-09-09",
-      "title": "Day Seven",
-      "text": "[Your final message before the birthday]",
-      "type": "video",
-      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview",
       "still": "/images/bennie-day7.png"
     },
     {
