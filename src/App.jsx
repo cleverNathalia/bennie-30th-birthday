@@ -14,7 +14,7 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('/content.json')
+    fetch(import.meta.env.BASE_URL + 'content.json')
       .then(res => res.json())
       .then(data => {
         setContentData(data)
