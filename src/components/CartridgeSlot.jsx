@@ -43,7 +43,7 @@ export function CartridgeSlot({ day = 1, state = 'locked', label, still, countdo
         <>
           {still ? (
             <img
-              src={still}
+              src={import.meta.env.BASE_URL + still.replace(/^\.\//, '')}
               alt=""
               style={{
                 position: 'absolute',
