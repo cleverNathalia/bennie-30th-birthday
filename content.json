@@ -7,7 +7,7 @@
       "text": "Something special is coming every day until Thursday. Check back daily at 18:00 (Dublin time) 💌",
       "type": "video",
       "videoLink": "https://drive.google.com/file/d/1KUqt06dL0P14KEzJU5g-DZgo0vX4aFy4/preview",
-      "still": "/images/bennie-day1.png"
+      "still": "./images/bennie-day1.png"
     },
     {
       "day": 2,
@@ -16,7 +16,7 @@
       "text": "Ek weet jy mis my koffie in die oggend. Jammer dat ek dit nie self kan maak nie, maar seker jy sal dit geniet ❤️. Net 6 slapies tot jou bday!",
       "type": "video",
       "videoLink": "https://drive.google.com/file/d/1E9FgZOSBV7-qYE7uY2EdqD6E2P2I2JQU/preview",
-      "still": "/images/bennie-day4.png"
+      "still": "./images/bennie-day4.png"
     },
     {
       "day": 3,
@@ -25,7 +25,7 @@
       "text": "Vandag dans ons dat jy binnekort n nuwe era intree! Whoop whoop, dance with me hun 💃 Net 5 slapies tot jou bday!",
       "type": "video",
       "videoLink": "https://drive.google.com/file/d/19fLb_xKtwfspbyHb-GU3U8sMrNDWZ5iU/preview",
-      "still": "/images/bennie-day2.png",
+      "still": "./images/bennie-day2.png",
       "unlockHour": 16
     },
     {
@@ -35,7 +35,7 @@
       "text": "30 Things I love about you ❤️. Net 4 slapies tot jou bday!",
       "type": "video",
       "videoLink": "https://drive.google.com/file/d/10QDPH1lOuFeBX8MEPg12yHmn8NMmXqBh/preview",
-      "still": "/images/bennie-day3.png"
+      "still": "./images/bennie-day3.png"
     },
     {
       "day": 5,
@@ -44,7 +44,7 @@
       "text": "Wens ek kon vir jou kos maak, maar moet dit vir nou eers deliver❤️ Love you sooo much! Net 3 slapies tot jou bday!",
       "type": "video",
       "videoLink": "https://drive.google.com/file/d/1k7WaTYdBbXFNRtv6Ufzh2thP5RhutkIM/preview",
-      "still": "/images/bennie-day5.png",
+      "still": "./images/bennie-day5.png",
       "unlockHour": 18
     },
     {
@@ -54,7 +54,7 @@
       "text": "Ek het jou klaar gese hoekom ek so lief is vir jou ❤️, maar kom ons kyk wat se jou vriende? 'Wat is jou gunsteling ding van Bennie?' was die vraag. Net 2 slapies tot jou bday!",
       "type": "video",
       "videoLink": "https://drive.google.com/file/d/1qdPSrjcoSM06GGx6FbflD_ojQwmHODNn/preview",
-      "still": "/images/bennie-day6.png",
+      "still": "./images/bennie-day6.png",
       "unlockHour": 10
     },
     {
@@ -64,7 +64,7 @@
       "text": "[Your final message before the birthday]",
       "type": "video",
       "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview",
-      "still": "/images/bennie-day7.png"
+      "still": "./images/bennie-day7.png"
     },
     {
       "day": 8,
@@ -73,7 +73,7 @@
       "text": "[Your birthday message]",
       "type": "video",
       "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview",
-      "still": "/images/bennie-day8.png"
+      "still": "./images/bennie-day8.png"
     }
   ]
 }
