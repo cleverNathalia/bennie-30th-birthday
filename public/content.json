@@ -61,25 +61,16 @@
       "day": 7,
       "date": "2026-09-09",
       "title": "Day Seven",
-      "text": "[Your final message before the birthday]",
-      "type": "gallery",
-      "photos": [
-        {
-          "url": "https://drive.google.com/uc?export=view&id=PLACEHOLDER",
-          "caption": "[Photo 1 caption]"
-        },
-        {
-          "url": "https://drive.google.com/uc?export=view&id=PLACEHOLDER",
-          "caption": "[Photo 2 caption]"
-        }
-      ],
-      "still": "/images/bennie-day7.png"
+      "text": "Sou saam met jou games speel, maar eks so bly jy word bederf vanaand ❤️. So hier is n klein videojie vir jou. Net 1 slapie tot jou bday!",
+      "type": "video",
+      "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview",
+      "still": "./images/bennie-day7.png"
     },
     {
       "day": 8,
       "date": "2026-09-10",
-      "title": "Happy 30th",
-      "text": "[Your birthday message]",
+      "title": "Happy 30th!",
+      "text": "Geseende 30ste verjaarsdag my engel! Eks so lief vir jou! Hier is vir jou n ordentlike Suid-Afrikaanse birthday surprise! LOVE YOU! ❤️❤️❤️",
       "type": "video",
       "videoLink": "https://drive.google.com/file/d/PLACEHOLDER/preview",
       "still": "/images/bennie-day8.png"
